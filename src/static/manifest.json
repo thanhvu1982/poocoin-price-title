@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "PooCoin Price Title",
+  "description": "Display PooCoin price on tab title",
+  "version": "1.0.0",
+
+  "content_scripts": [
+    {
+      "matches": ["https://poocoin.app/*"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "icons": {
+    "128": "icons/icon64.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/icon64.png",
+    "default_title": "PooCoin Price Title"
+  },
+  "permissions": ["activeTab"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+}
